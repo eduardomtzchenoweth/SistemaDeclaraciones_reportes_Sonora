@@ -1,3 +1,5 @@
+version: '3'  # Asegúrate de tener una versión especificada
+
 services:
   app:
     container_name: Reports
@@ -9,3 +11,8 @@ services:
       - .:/code
     ports:
       - 3001:3001
+    networks:
+      - backend-network  # Conecta a la red
+
+networks:
+  backend-network:  # Define la red
